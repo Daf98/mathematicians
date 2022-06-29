@@ -1,8 +1,7 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Button extends React.Component {
+class Button extends React.PureComponent {
   render() {
     const { id, name } = this.props;
     return (

@@ -1,9 +1,8 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import Button from './Button';
 import Input from './Input';
 
-class Calculator extends React.Component {
+class Calculator extends React.PureComponent {
   render() {
     return (
       <section className="container">

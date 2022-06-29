@@ -1,36 +1,54 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import Button from './Button';
 import Input from './Input';
+import calculate from '../logic/calculate';
 
-class Calculator extends React.Component {
+class Calculator extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.changeState = this.changeState.bind(this);
+    this.state = {
+      total: null,
+      next: null,
+    };
+  }
+
+  showOp(screen) {
+    this.setState(() => ({ next: screen }));
+  }
+
+  changeState(button) {
+    this.setState((state) => (calculate(state, button)));
+  }
+
   render() {
+    const { next, total } = this.state;
     return (
       <section className="container">
-        <Input />
+        <Input props={next || total || '0'} />
         <div className="calculator-container">
           <div className="normal">
-            <Button name="AC" />
-            <Button name="+/-" />
-            <Button name="%" />
-            <Button name="÷" id="orange" />
-            <Button name="7" />
-            <Button name="8" />
-            <Button name="9" />
-            <Button name="X" id="orange" />
-            <Button name="4" />
-            <Button name="5" />
-            <Button name="6" />
-            <Button name="-" id="orange" />
-            <Button name="1" />
-            <Button name="2" />
-            <Button name="3" />
-            <Button name="+" id="orange" />
+            <Button name="AC" id="gray" changeState={this.changeState} />
+            <Button name="+/-" id="gray" changeState={this.changeState} />
+            <Button name="%" id="gray" changeState={this.changeState} />
+            <Button name="÷" id="orange" changeState={this.changeState} />
+            <Button name="7" id="gray" changeState={this.changeState} />
+            <Button name="8" id="gray" changeState={this.changeState} />
+            <Button name="9" id="gray" changeState={this.changeState} />
+            <Button name="x" id="orange" changeState={this.changeState} />
+            <Button name="4" id="gray" changeState={this.changeState} />
+            <Button name="5" id="gray" changeState={this.changeState} />
+            <Button name="6" id="gray" changeState={this.changeState} />
+            <Button name="-" id="orange" changeState={this.changeState} />
+            <Button name="1" id="gray" changeState={this.changeState} />
+            <Button name="2" id="gray" changeState={this.changeState} />
+            <Button name="3" id="gray" changeState={this.changeState} />
+            <Button name="+" id="orange" changeState={this.changeState} />
           </div>
           <div className="unique">
-            <Button name="0" />
-            <Button name="." />
-            <Button name="=" id="orange" />
+            <Button name="0" id="gray" changeState={this.changeState} />
+            <Button name="." id="gray" changeState={this.changeState} />
+            <Button name="=" id="orange" changeState={this.changeState} />
           </div>
 
         </div>

@@ -1,15 +1,18 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Button extends React.Component {
+class Button extends React.PureComponent {
   render() {
-    const { id, name } = this.props;
+    const { id, name, changeState } = this.props;
     return (
-      <div className="single-button" id={id}><h3>{name}</h3></div>
+      <button type="button" className="single-button" id={id} onClick={() => { changeState(name); }}><h3>{name}</h3></button>
     );
   }
 }
 
-Button.propTypes = { name: PropTypes.string.isRequired, id: PropTypes.string.isRequired };
+Button.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  changeState: PropTypes.func.isRequired,
+};
 export default Button;

@@ -5,7 +5,7 @@ class Button extends React.PureComponent {
   render() {
     const { buttonName, changeState, className } = this.props;
     return (
-      <button type="button" onClick={() => { changeState(buttonName); }}><h3>{buttonName}</h3></button>
+      <button type="button" className={className} onClick={() => { changeState(buttonName); }}><h3>{buttonName}</h3></button>
     );
   }
 }

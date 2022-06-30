@@ -3,6 +3,83 @@ import Button from './Button';
 import Input from './Input';
 import calculate from '../logic/calculate';
 
+const buttons = [{
+  buttonName: 'AC',
+  className: 'gray',
+},
+{
+  buttonName: '+/-',
+  className: 'gray',
+},
+{
+  buttonName: '%',
+  className: 'gray',
+},
+{
+  buttonName: '÷',
+  className: 'orange',
+},
+{
+  buttonName: '7',
+  className: 'gray',
+},
+{
+  buttonName: '8',
+  className: 'gray',
+},
+{
+  buttonName: '9',
+  className: 'gray',
+},
+{
+  buttonName: 'x',
+  className: 'orange',
+},
+{
+  buttonName: '4',
+  className: 'gray',
+},
+{
+  buttonName: '5',
+  className: 'gray',
+},
+{
+  buttonName: '6',
+  className: 'gray',
+},
+{
+  buttonName: '-',
+  className: 'orange',
+},
+{
+  buttonName: '1',
+  className: 'gray',
+},
+{
+  buttonName: '2',
+  className: 'gray',
+},
+{
+  buttonName: '3',
+  className: 'gray',
+},
+{
+  buttonName: '+',
+  className: 'orange',
+},
+{
+  buttonName: '0',
+  className: 'gray unique',
+},
+{
+  buttonName: '.',
+  className: 'gray',
+},
+{
+  buttonName: '=',
+  className: 'orange',
+},
+];
 class Calculator extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -27,30 +104,14 @@ class Calculator extends React.PureComponent {
       <section className="container">
         <Input props={next || total || '0'} />
         <div className="calculator-container">
-          <div className="normal">
-            <Button name="AC" id="gray" changeState={this.changeState} />
-            <Button name="+/-" id="gray" changeState={this.changeState} />
-            <Button name="%" id="gray" changeState={this.changeState} />
-            <Button name="÷" id="orange" changeState={this.changeState} />
-            <Button name="7" id="gray" changeState={this.changeState} />
-            <Button name="8" id="gray" changeState={this.changeState} />
-            <Button name="9" id="gray" changeState={this.changeState} />
-            <Button name="x" id="orange" changeState={this.changeState} />
-            <Button name="4" id="gray" changeState={this.changeState} />
-            <Button name="5" id="gray" changeState={this.changeState} />
-            <Button name="6" id="gray" changeState={this.changeState} />
-            <Button name="-" id="orange" changeState={this.changeState} />
-            <Button name="1" id="gray" changeState={this.changeState} />
-            <Button name="2" id="gray" changeState={this.changeState} />
-            <Button name="3" id="gray" changeState={this.changeState} />
-            <Button name="+" id="orange" changeState={this.changeState} />
-          </div>
-          <div className="unique">
-            <Button name="0" id="gray" changeState={this.changeState} />
-            <Button name="." id="gray" changeState={this.changeState} />
-            <Button name="=" id="orange" changeState={this.changeState} />
-          </div>
-
+          {buttons.map((button) => (
+            <Button
+              key={button.key}
+              buttonName={button.buttonName}
+              className={button.className}
+              changeState={this.changeState}
+            />
+          ))}
         </div>
       </section>
     );

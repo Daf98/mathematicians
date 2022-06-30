@@ -15,13 +15,12 @@ body {
   width: 100%;
 }
 
-.single-button {
+.gray, .orange {
   display: flex;
   justify-content: center;
   border: 1px solid #d1d1d1;
   padding: 0;
   margin: 0;
-  background-color: #e0e0e0;
 }
 
 .normal {
@@ -47,6 +46,10 @@ body {
   font-size: 40px;
 }
 
-#orange {
+.orange {
   background-color: #f5913e;
+}
+
+.gray {
+  background-color: #e0e0e0;
 }

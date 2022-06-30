@@ -10,8 +10,6 @@
 - Git, GitHub, Webpack
 - React
 
-## Live Demo
-
 ### To launch the project locally:
 #### Step 1:
 - Clone this repo locally using git in the command line and the following command

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './Button';
 import Input from './Input';
 import calculate from '../logic/calculate';
@@ -80,41 +80,26 @@ const buttons = [{
   className: 'orange',
 },
 ];
-class Calculator extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.changeState = this.changeState.bind(this);
-    this.state = {
-      total: null,
-      next: null,
-    };
-  }
+const Calculator = () => {
+  const [state, setState] = useState({ total: null, next: null });
 
-  showOp(screen) {
-    this.setState(() => ({ next: screen }));
-  }
-
-  changeState(button) {
-    this.setState((state) => (calculate(state, button)));
-  }
-
-  render() {
-    const { next, total } = this.state;
-    return (
-      <section className="container">
-        <Input props={next || total || '0'} />
-        <div className="calculator-container">
-          {buttons.map((button) => (
-            <Button
-              key={button.key}
-              buttonName={button.buttonName}
-              className={button.className}
-              changeState={this.changeState}
-            />
-          ))}
-        </div>
-      </section>
-    );
-  }
-}
+  const changeState = (button) => {
+    setState((state) => (calculate(state, button)));
+  };
+  return (
+    <section className="container">
+      <Input props={state.next || state.total || '0'} />
+      <div className="calculator-container">
+        {buttons.map((button) => (
+          <Button
+            key={button.key}
+            buttonName={button.buttonName}
+            className={button.className}
+            changeState={changeState}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
 export default Calculator;

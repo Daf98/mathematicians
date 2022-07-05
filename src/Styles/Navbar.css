@@ -1,0 +1,20 @@
+nav,
+ul {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  justify-content: space-between;
+}
+
+ul {
+  width: 25%;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.vertical-line {
+  border-left: 1px solid white;
+  height: 25px;
+}

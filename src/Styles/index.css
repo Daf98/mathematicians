@@ -1,7 +1,8 @@
 body {
   margin: 0;
-  color: #0e0f18;
+  color: white;
   background-color: black;
+  padding: 2rem;
 }
 
 .container {
@@ -9,7 +10,6 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   width: 40%;
-  margin: 0 auto;
 }
 
 .calculator-container {

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Jest Snapshot testing suite Matches DOM Snapshot 1`] = `
+<h2
+  className="quote"
+>
+  “Sometimes it is the people no one can imagine anything of, who do the things no one can imagine.” -Alan Turing
+</h2>
+`;

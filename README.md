@@ -1,6 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Math Magicians
+![image](https://user-images.githubusercontent.com/82343891/179324174-5fe34f2c-f1e7-4002-ba0b-95a3abfac340.png)
 
 > Calculator
 
